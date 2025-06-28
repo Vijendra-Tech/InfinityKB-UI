@@ -49,15 +49,8 @@ const SupportFlowUI: React.FC = () => {
   const [selectedIssue, setSelectedIssue] = useState<Issue | undefined>(undefined);
   const [isSearching, setIsSearching] = useState(false);
 
-  const handleSearch = (query: string) => {
-    setIsSearching(true);
-    // Simulate search delay
-    setTimeout(() => {
-      setIsSearching(false);
-    }, 1000);
-  };
 
-  const handleFilterSearch = (filters: any) => {
+  const handleFilterSearch = () => {
     setIsSearching(true);
     // Simulate search delay
     setTimeout(() => {
