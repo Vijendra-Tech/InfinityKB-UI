@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L2 Support Flow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .connector-line {
+      position: absolute;
+      border-top: 2px dashed #94a3b8;
+      z-index: -1;
+    }
+    .connector-vertical {
+      position: absolute;
+      border-left: 2px dashed #94a3b8;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-4 md:p-8">
+  <div class="max-w-7xl mx-auto">
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold text-center text-gray-900">L2 Support Flow Visualization</h1>
+      <p class="text-center text-gray-600 mt-2">Modern implementation using Tailwind CSS</p>
+    </header>
+
+    <div class="w-full max-w-7xl mx-auto p-6 bg-gray-50 rounded-lg shadow-md">
+      <!-- Header -->
+      <div class="mb-8">
+        <h1 class="text-2xl font-bold text-gray-800">L2 Support Flow</h1>
+      </div>
+
+      <!-- Main Flow Container -->
+      <div class="relative">
+        <!-- Top Red Dashed Line -->
+        <div class="absolute top-0 left-0 right-0 border-t-2 border-dashed border-red-300"></div>
+
+        <!-- Flow Content -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+          <!-- L1/Customer Ticket Logging -->
+          <div class="col-span-1">
+            <div class="bg-green-100 border border-green-200 p-4 rounded-md shadow mb-6">
+              <h2 class="font-semibold text-green-800">L2 Support flow</h2>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-200 p-4 rounded-md shadow flex flex-col">
+              <h2 class="font-semibold text-blue-800 mb-2">L1/customer Ticket logging in Salesforce</h2>
+            </div>
+
+            <!-- Benefits Box -->
+            <div class="mt-8 border-2 border-dashed border-yellow-400 p-4 rounded-lg bg-yellow-50">
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-orange-500 mr-2">•</span>
+                  <span class="text-sm">Quicker resolution time for common issues</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-orange-500 mr-2">•</span>
+                  <span class="text-sm">Backlog ticket reduction with history analysis</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-orange-500 mr-2">•</span>
+                  <span class="text-sm">Removal of duplicate issues and rapid closure</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-orange-500 mr-2">•</span>
+                  <span class="text-sm">Ticket trend analysis</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Middle Flow -->
+          <div class="col-span-1 flex flex-col space-y-6">
+            <!-- AI Agent Box -->
+            <div class="bg-indigo-800 text-white p-4 rounded-md shadow-lg">
+              <div class="flex items-center mb-2">
+                <div class="w-2 h-2 bg-white rounded-full mr-2"></div>
+                <h3 class="font-semibold">AI Agent Acknowledges and Route the ticket</h3>
+              </div>
+              <ul class="ml-4 space-y-1 text-sm">
+                <li class="flex items-start">
+                  <span class="mr-2">•</span>
+                  <span>Online similarity search on past history data</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2">•</span>
+                  <span>Link and closure of Duplicate issues</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2">•</span>
+                  <span>Identify the possible solution from history</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2">•</span>
+                  <span>Identify the non code solutions (Config/Settings) - Suggestions to L2 org</span>
+                </li>
+              </ul>
+              <div class="mt-4 flex justify-center">
+                <div class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">AI Agents</div>
+              </div>
+            </div>
+
+            <!-- Arrow Down -->
+            <div class="flex justify-center">
+              <svg class="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+
+            <!-- Automated Jira Ticket Creation -->
+            <div class="bg-indigo-800 text-white p-4 rounded-md shadow-lg">
+              <h3 class="font-semibold mb-2">Automated Jira ticket creation with AI And assign to E3 team</h3>
+              <div class="flex justify-center mt-2">
+                <svg class="w-10 h-10 text-blue-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 20H22V18C22 16.3431 20.6569 15 19 15C18.0444 15 17.1931 15.4468 16.6438 16.1429M17 20H7M17 20V18C17 17.3438 16.8736 16.717 16.6438 16.1429M7 20H2V18C2 16.3431 3.34315 15 5 15C5.95561 15 6.80686 15.4468 7.35625 16.1429M7 20V18C7 17.3438 7.12642 16.717 7.35625 16.1429M7.35625 16.1429C8.0935 14.301 9.89482 13 12 13C14.1052 13 15.9065 14.301 16.6438 16.1429M15 7C15 8.65685 13.6569 10 12 10C10.3431 10 9 8.65685 9 7C9 5.34315 10.3431 4 12 4C13.6569 4 15 5.34315 15 7ZM21 10C21 11.1046 20.1046 12 19 12C17.8954 12 17 11.1046 17 10C17 8.89543 17.8954 8 19 8C20.1046 8 21 8.89543 21 10ZM7 10C7 11.1046 6.10457 12 5 12C3.89543 12 3 11.1046 3 10C3 8.89543 3.89543 8 5 8C6.10457 8 7 8.89543 7 10Z" 
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Arrow Down -->
+            <div class="flex justify-center">
+              <svg class="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+
+            <!-- Update the client -->
+            <div class="bg-gray-100 border border-gray-200 p-4 rounded-md shadow-lg flex flex-col items-center">
+              <div class="bg-blue-100 rounded-full p-2 mb-2">
+                <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-gray-800">Update the client</h3>
+            </div>
+          </div>
+
+          <!-- Right Flow -->
+          <div class="col-span-1 flex flex-col space-y-6">
+            <!-- Issue Resolution Box -->
+            <div class="bg-gray-100 border border-gray-200 p-4 rounded-md shadow-lg">
+              <h3 class="font-semibold text-gray-800 mb-2">Issue resolution with AI provided knowledge</h3>
+              <div class="flex justify-center mt-4">
+                <svg class="w-10 h-10 text-blue-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" 
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" 
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 16V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 4V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4.93 4.93L7.76 7.76" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16.24 16.24L19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4.93 19.07L7.76 16.24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16.24 7.76L19.07 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Not Fixed Label -->
+            <div class="flex justify-center">
+              <div class="bg-red-100 text-red-800 px-4 py-1 rounded-md">Not fixed</div>
+            </div>
+
+            <!-- Generate Summary Box -->
+            <div class="bg-indigo-800 text-white p-4 rounded-md shadow-lg mt-auto">
+              <h3 class="font-semibold mb-2">Generate Summary with AI and Update SF with resolution</h3>
+              <div class="flex justify-center mt-2">
+                <div class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Fixed</div>
+              </div>
+            </div>
+
+            <!-- Arrow Left -->
+            <div class="flex justify-start">
+              <svg class="w-8 h-8 text-gray-400 transform -rotate-90" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+
+            <!-- Close the ticket -->
+            <div class="bg-gray-100 border border-gray-200 p-4 rounded-md shadow-lg">
+              <div class="bg-blue-100 rounded-full p-2 mb-2 mx-auto w-fit">
+                <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-gray-800 text-center">Close the ticket</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Connector Lines - These would be better implemented with a library like react-flow or custom SVG -->
+        <div class="hidden md:block">
+          <!-- These are placeholders for connector lines -->
+          <!-- In a real implementation, you might use SVG paths or a specialized library -->
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="mt-8 flex justify-between items-center text-xs text-gray-500">
+        <div>GlobalLogic - AI Infinity Group Company</div>
+        <div>Confidential</div>
+        <div>16</div>
+      </div>
+    </div>
+
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+      <p>© 2025 Infinity DB Design. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Add any interactive functionality here if needed
+  </script>
+</body>
+</html>
