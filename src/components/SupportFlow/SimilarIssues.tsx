@@ -66,7 +66,7 @@ const SimilarIssues: React.FC<SimilarIssuesProps> = ({ issues, onSelectIssue, se
             variants={item}
             onClick={() => onSelectIssue(issue)}
             className={`p-4 border rounded-md cursor-pointer transition-all ${
-              selectedIssue?.id === issue.id ? 'border-blue-500 shadow-md' : 'border-gray-200 hover:border-blue-300'
+              selectedIssue?.id === issue.id ? 'border-blue-500' : 'border-gray-200 hover:border-blue-300'
             }`}
           >
             <h3 className="font-medium text-gray-800">{issue.title}</h3>

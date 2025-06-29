@@ -28,7 +28,7 @@ const TicketInput: React.FC<TicketInputProps> = ({ onSubmit }) => {
           type="text"
           value={ticketId}
           onChange={(e) => setTicketId(e.target.value)}
-          placeholder="Enter your Ticket URL/TicketNumber"
+          placeholder="Enter your Query..."
           className="w-full py-2 px-4 pr-10 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
         <motion.button

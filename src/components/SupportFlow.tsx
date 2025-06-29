@@ -3,26 +3,27 @@ import { motion } from 'framer-motion';
 import { TeamIcon, KnowledgeIcon, CheckIcon, InfoIcon, ArrowDownIcon } from './Icons';
 import { SupportFlowUI } from './SupportFlow/index';
 import DesignDrafts from './SupportFlow/DesignDrafts';
+import { AdminPage } from './Admin';
 
 const SupportFlow: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'search' | 'flow' | 'design'>('design');
+  const [activeTab, setActiveTab] = useState<'search' | 'flow' | 'design' | 'admin'>('design');
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-6 bg-gray-50 rounded-lg shadow-md">
+    <div className="w-full min-h-screen bg-gray-50 px-4 py-4">
       {/* Header with Tabs */}
       <div className="mb-8">
         <div className="flex border-b border-gray-200">
-          <motion.button
-            whileHover={{ backgroundColor: activeTab === 'search' ? 'rgb(243, 244, 246)' : 'rgb(249, 250, 251)' }}
+        <motion.button
+            whileHover={{ backgroundColor: activeTab === 'design' ? 'rgb(243, 244, 246)' : 'rgb(249, 250, 251)' }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => setActiveTab('search')}
+            onClick={() => setActiveTab('design')}
             className={`px-4 py-2 font-medium ${
-              activeTab === 'search'
+              activeTab === 'design'
                 ? 'text-blue-600 border-b-2 border-blue-500'
                 : 'text-gray-500 hover:text-gray-700'
             }`}
           >
-            Search & Similar Issues
+            Design Draft
           </motion.button>
           <motion.button
             whileHover={{ backgroundColor: activeTab === 'flow' ? 'rgb(243, 244, 246)' : 'rgb(249, 250, 251)' }}
@@ -37,17 +38,32 @@ const SupportFlow: React.FC = () => {
             L2 Support Flow
           </motion.button>
           <motion.button
-            whileHover={{ backgroundColor: activeTab === 'design' ? 'rgb(243, 244, 246)' : 'rgb(249, 250, 251)' }}
+            whileHover={{ backgroundColor: activeTab === 'search' ? 'rgb(243, 244, 246)' : 'rgb(249, 250, 251)' }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => setActiveTab('design')}
+            onClick={() => setActiveTab('search')}
             className={`px-4 py-2 font-medium ${
-              activeTab === 'design'
+              activeTab === 'search'
                 ? 'text-blue-600 border-b-2 border-blue-500'
                 : 'text-gray-500 hover:text-gray-700'
             }`}
           >
-            Design Draft
+            Search & Similar Issues
           </motion.button>
+          
+          <motion.button
+            whileHover={{ backgroundColor: activeTab === 'admin' ? 'rgb(243, 244, 246)' : 'rgb(249, 250, 251)' }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => setActiveTab('admin')}
+            className={`px-4 py-2 font-medium ${
+              activeTab === 'admin'
+                ? 'text-blue-600 border-b-2 border-blue-500'
+                : 'text-gray-500 hover:text-gray-700'
+            }`}
+          >
+            Admin
+          </motion.button>
+         
+          
         </div>
       </div>
 
@@ -60,11 +76,15 @@ const SupportFlow: React.FC = () => {
         transition={{ duration: 0.3 }}
       >
         {activeTab === 'search' ? (
-          <SupportFlowUI />
+          <div className="flex">
+            <SupportFlowUI />
+          </div>
         ) : activeTab === 'design' ? (
-          <div className="w-full max-w-7xl mx-auto bg-gray-50 rounded-lg shadow-lg overflow-hidden p-6">
+          <div className="w-full  mx-auto bg-gray-50 rounded-lg overflow-hidden p-6">
             <DesignDrafts />
           </div>
+        ) : activeTab === 'admin' ? (
+          <AdminPage />
         ) : (
           <div className="relative">
             {/* Top Red Dashed Line */}
@@ -74,11 +94,11 @@ const SupportFlow: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
               {/* L1/Customer Ticket Logging */}
               <div className="col-span-1">
-                <div className="bg-green-100 border border-green-200 p-4 rounded-md shadow mb-6">
+                <div className="bg-green-100 border border-green-200 p-4 rounded-md  mb-6">
                   <h2 className="font-semibold text-green-800">L2 Support flow</h2>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 p-4 rounded-md shadow flex flex-col">
+                <div className="bg-blue-50 border border-blue-200 p-4 rounded-md  flex flex-col">
                   <h2 className="font-semibold text-blue-800 mb-2">L1/customer Ticket logging in Salesforce</h2>
                 </div>
 
@@ -108,7 +128,7 @@ const SupportFlow: React.FC = () => {
               {/* Middle Flow */}
               <div className="col-span-1 flex flex-col space-y-6">
                 {/* AI Agent Box */}
-                <div className="bg-indigo-800 text-white p-4 rounded-md shadow-lg">
+                <div className="bg-indigo-800 text-white p-4 rounded-md ">
                   <div className="flex items-center mb-2">
                     <div className="w-2 h-2 bg-white rounded-full mr-2"></div>
                     <h3 className="font-semibold">AI Agent Acknowledges and Route the ticket</h3>
@@ -142,7 +162,7 @@ const SupportFlow: React.FC = () => {
                 </div>
 
                 {/* Automated Jira Ticket Creation */}
-                <div className="bg-indigo-800 text-white p-4 rounded-md shadow-lg">
+                <div className="bg-indigo-800 text-white p-4 rounded-md ">
                   <h3 className="font-semibold mb-2">Automated Jira ticket creation with AI And assign to E3 team</h3>
                   <div className="flex justify-center mt-2">
                     <TeamIcon className="w-10 h-10 text-blue-600" />
@@ -155,7 +175,7 @@ const SupportFlow: React.FC = () => {
                 </div>
 
                 {/* Update the client */}
-                <div className="bg-gray-100 border border-gray-200 p-4 rounded-md shadow-lg flex flex-col items-center">
+                <div className="bg-gray-100 border border-gray-200 p-4 rounded-md flex flex-col items-center">
                   <div className="bg-blue-100 rounded-full p-2 mb-2">
                     <InfoIcon className="w-6 h-6 text-blue-500" />
                   </div>
@@ -166,7 +186,7 @@ const SupportFlow: React.FC = () => {
               {/* Right Flow */}
               <div className="col-span-1 flex flex-col space-y-6">
                 {/* Issue Resolution Box */}
-                <div className="bg-gray-100 border border-gray-200 p-4 rounded-md shadow-lg">
+                <div className="bg-gray-100 border border-gray-200 p-4 rounded-md ">
                   <h3 className="font-semibold text-gray-800 mb-2">Issue resolution with AI provided knowledge</h3>
                   <div className="flex justify-center mt-4">
                     <KnowledgeIcon className="w-10 h-10 text-blue-600" />
@@ -179,7 +199,7 @@ const SupportFlow: React.FC = () => {
                 </div>
 
                 {/* Generate Summary Box */}
-                <div className="bg-indigo-800 text-white p-4 rounded-md shadow-lg mt-auto">
+                <div className="bg-indigo-800 text-white p-4 rounded-md mt-auto">
                   <h3 className="font-semibold mb-2">Generate Summary with AI and Update SF with resolution</h3>
                   <div className="flex justify-center mt-2">
                     <div className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Fixed</div>
@@ -192,7 +212,7 @@ const SupportFlow: React.FC = () => {
                 </div>
 
                 {/* Close the ticket */}
-                <div className="bg-gray-100 border border-gray-200 p-4 rounded-md shadow-lg">
+                <div className="bg-gray-100 border border-gray-200 p-4 rounded-md ">
                   <div className="bg-blue-100 rounded-full p-2 mb-2 mx-auto w-fit">
                     <CheckIcon className="w-6 h-6 text-blue-500" />
                   </div>

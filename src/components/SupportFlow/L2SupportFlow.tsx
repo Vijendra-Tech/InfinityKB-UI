@@ -46,7 +46,7 @@ const l2SupportData = [
 
 const L2SupportFlow: React.FC = () => {
   return (
-    <div className="bg-white rounded-lg p-5 shadow-sm border border-gray-200">
+    <div className="bg-white rounded-lg p-5 border border-gray-200">
       <h3 className="text-lg font-medium mb-4">L2 Support Flow</h3>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">

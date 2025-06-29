@@ -83,33 +83,35 @@ const SupportFlowUI: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto bg-gray-50 rounded-lg shadow-lg overflow-hidden">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+    <div className="w-full bg-gray-50 overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-2 py-4 relative min-h-[600px]">
         {/* Left Column */}
-        <div className="col-span-1">
-          <div className="mb-6">
-             AI Agents
+        <div className="col-span-1 md:border-r-2 md:border-gray-300 md:pr-4 flex flex-col h-full">
+          <div className="flex-grow">
+            <div className="mb-6">
+              AI Agents
+            </div>
+            
+            <div className="mb-6">
+              <ThinkingProcess steps={thinkingSteps} />
+            </div>
+            
+            <div className="mb-6">
+              <ActionButtons 
+                onCreateTicket={handleCreateTicket}
+                onSolveIssue={handleSolveIssue}
+                onMoreOptions={handleMoreOptions}
+              />
+            </div>
           </div>
           
-          <div className="mb-6">
-            <ThinkingProcess steps={thinkingSteps} />
-          </div>
-          
-          <div className="mb-6">
-            <ActionButtons 
-              onCreateTicket={handleCreateTicket}
-              onSolveIssue={handleSolveIssue}
-              onMoreOptions={handleMoreOptions}
-            />
-          </div>
-          
-          <div>
+          <div className="sticky bottom-0 bg-gray-50 pt-4">
             <TicketInput onSubmit={handleTicketSubmit} />
           </div>
         </div>
         
         {/* Middle Column */}
-        <div className="col-span-1">
+        <div className="col-span-1 md:border-r-2 md:border-gray-300 md:pr-4">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

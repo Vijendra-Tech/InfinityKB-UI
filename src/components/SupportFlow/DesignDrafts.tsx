@@ -4,7 +4,7 @@ import designIdea from '../../assets/Design02.png';
 
 const DesignDrafts: React.FC = () => {
   return (
-    <div className="bg-white rounded-lg p-5 shadow-sm border border-gray-200">
+    <div className="bg-white rounded-lg p-5 border border-gray-200">
       <h3 className="text-lg font-medium mb-4">Design Drafts</h3>
       <div className="overflow-auto">
       <img 

@@ -34,16 +34,6 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
         <FiCheckCircle className="mr-2" />
         <span>Solve Issue</span>
       </motion.button>
-      
-      <motion.button
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
-        onClick={onMoreOptions}
-        className="flex items-center justify-center px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-      >
-        <span className="mr-2">Some more options</span>
-        <FiMoreHorizontal />
-      </motion.button>
     </div>
   );
 };
