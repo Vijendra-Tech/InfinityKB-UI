@@ -11,12 +11,20 @@ const DesignDrafts: React.FC = () => {
           src={designIdea} 
           alt="Design Draft 02" 
           className="w-full h-auto rounded-md shadow-sm"
+          title="Design Draft 02"
+          loading="lazy"
+          width={500}
+          height={500}
         />  
         <h3 className="text-lg font-medium mb-4 mt-10">Search & Similar Issues Example</h3>
         <img 
           src={designImage} 
           alt="Design Draft 01" 
           className="w-full h-auto rounded-md shadow-sm"
+          title="Design Draft 01" 
+          loading="lazy"
+          width={500}
+          height={500}
         />
        
       </div>
