@@ -123,7 +123,7 @@ const AnnotationsPanel: React.FC = () => {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           onClick={() => setShowForm(!showForm)}
-          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 flex items-center"
+          className="px-4 py-2 bg-blue-500 text-black rounded-md hover:bg-blue-600 flex items-center"
         >
           <FiPlus className="mr-2" />
           {showForm ? 'Cancel' : 'Add Annotation'}

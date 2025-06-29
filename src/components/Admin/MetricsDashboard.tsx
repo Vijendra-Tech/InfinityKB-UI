@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiBarChart2, FiRefreshCw, FiDownload } from 'react-icons/fi';
+import { FiRefreshCw, FiDownload } from 'react-icons/fi';
 
 // Mock data for charts
 const mockMetrics = {

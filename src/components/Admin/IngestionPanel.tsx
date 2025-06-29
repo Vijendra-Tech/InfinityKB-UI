@@ -109,7 +109,7 @@ const IngestionPanel: React.FC = () => {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           onClick={() => setShowAddForm(!showAddForm)}
-          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 flex items-center"
+          className="px-4 py-2 bg-blue-500 rounded-md hover:bg-blue-600 flex items-center text-black"
         >
           <FiUpload className="mr-2" />
           {showAddForm ? 'Cancel' : 'Add New Source'}

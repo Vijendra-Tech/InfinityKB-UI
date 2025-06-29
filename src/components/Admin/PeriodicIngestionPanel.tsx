@@ -70,7 +70,6 @@ const PeriodicIngestionPanel: React.FC = () => {
       setEditingId(null);
     } else {
       // Add new schedule
-      const now = new Date();
       let nextRun = new Date();
       
       switch (frequency) {
@@ -155,7 +154,7 @@ const PeriodicIngestionPanel: React.FC = () => {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           onClick={() => setShowAddForm(!showAddForm)}
-          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 flex items-center"
+          className="px-4 py-2 bg-blue-500 text-black rounded-md hover:bg-blue-600 flex items-center"
         >
           <FiClock className="mr-2" />
           {showAddForm ? 'Cancel' : editingId ? 'Edit Schedule' : 'Add Schedule'}
